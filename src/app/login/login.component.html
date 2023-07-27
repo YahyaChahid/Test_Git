@@ -1,0 +1,30 @@
+<p>login works!</p>
+<form ngForm #loginForm 
+(submit)="OnSubmit(); loginForm.reset()"
+>
+    <input [(ngModel)]="nom" name="nom">
+    <input [(ngModel)]="prenom" name="prenom">
+    <input [(ngModel)]="age" name="age">
+    <input [(ngModel)]="specialite" name="specialite">
+    
+    <button mat-stroked-button color="primary"
+    [disabled]="!ajoutActive"
+    >
+        Ajouter une personne
+    </button>
+</form>
+<div *ngFor="let nom of noms">
+    <div *ngIf="nom.age<24;else correct"
+    appAge>
+       
+    Nom : {{nom.nom}}
+    Prenom: {{nom.prenom}}
+        
+    </div>
+    
+</div>
+<ng-template #correct>
+    <p>
+       Erreur Age
+    </p>
+    </ng-template>
