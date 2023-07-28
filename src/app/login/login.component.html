@@ -1,4 +1,5 @@
 <p>login works!</p>
+
 <form ngForm #loginForm 
 (submit)="OnSubmit(); loginForm.reset()"
 >
@@ -28,3 +29,5 @@
        Erreur Age
     </p>
     </ng-template>
+
+    <app-home>[(model)]="l"</app-home>
